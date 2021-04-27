@@ -1,0 +1,18 @@
+h1
+{
+text-align: center;
+}
+*
+{
+    background-image: url(https://image.shutterstock.com/image-illustration/winner-podium-geometrical-shape-blue-600w-1412672564.jpg);
+    background-size:cover;
+}
+body
+{
+text-shadow: darkgrey;
+}
+
+  .hel {
+    font-family: "Merriweather", Roboto, sans-serif;
+    font-size: 18px;
+    }

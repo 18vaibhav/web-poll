@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title> Web Poll App made by me</title>
+     <link rel="shortcut icon" href=https://www.freeiconspng.com/thumbs/16x16-icon/simple-twitter-16x16-icon-png-7.png type="image/x-icon" />
+    </head>
+    <body class="hel"> 
+        
+        <h1 class="text-uppercase  font-weight-bold"> Questions</h1>
+{% if latest_question_list %}
+    <ul >
+    {% for question in latest_question_list %}
+    <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+    <h3>  </h3>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+</body>
+</html>

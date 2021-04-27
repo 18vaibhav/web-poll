@@ -1,0 +1,23 @@
+<html>
+
+<title> Voting page</title>
+<link rel="shortcut icon" href=https://www.freeiconspng.com/thumbs/16x16-icon/simple-twitter-16x16-icon-png-7.png type="image/x-icon" />
+<body>
+    <h1>Here you have to choose most prominent option according to you</h1>
+<h2>{{ question.question_text }}</h2>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:vote' question.id %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+    <h3>      </h3>
+{% endfor %}
+<input type="submit" value="Vote">
+</form>
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style1.CSS' %}">
+</body>
+</html>
